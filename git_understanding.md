@@ -67,13 +67,27 @@ I was mainly surprised to find out, how git blame shows us that who is respinsil
 
 
 Understand git bisect #44
+
 What does git bisect do?
 we use bisect to find the first commit that introduced the bug, and we do this by testing commits using a binary search.
-
 
 When would you use it in a real-world debugging situation?
 In real-world, projects usually conatins multiple commint, we use bisect when we can not identify what caused a certain bug.
 
-
 How does it compare to manually reviewing commits?
 It uses binanry search, it cuts the search into half as it continues to look for the bug. 
+
+
+
+
+
+Writing Meaningful Commit Messages #45
+
+What makes a good commit message?
+A good commit message clearly mentions what was the change/commit about, while keeping it short and precise. 
+
+How does it help collaboration?
+It helps the teammates to understand or review the changes in git log, and is greatly appreciated when debugging.
+
+How can poor messages cause issues later?
+Vague message leads to waste of time, as developers struggle to understand what caused an issue or even while reviewing. It makes it harder to find the right change. 
