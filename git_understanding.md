@@ -38,3 +38,25 @@ Branches allow us to work on changes separately from the main branch. The change
 
 What happens if two people edit the same file on different branches?
 Git would then try to merge the changes automatically. However if both people modify the same part of the file, a merge conflict would occur and someone would have to manually decide which change to keep.
+
+
+
+
+
+
+Advanced Git Commands & When to Use Them #43
+
+git checkout main -- <file>
+This command restores a specific file from the main branch without changing other files. I could potentially use it, if accidentally I changed or broke a file and want to return it to the version in main.
+
+git cherry-pick <commit>
+This command apply one specific commit from another branch to the current branch. I could use it if I only need one fix or change from another branch without merging the whole branch.
+
+git log
+This basically shows the commit history of the repository. It allows me see what changes were made, when they were made, and who made them.
+
+git blame <file>
+This command shows who last modified a line in the file and when. It is specially useful when we are trying to find where a piece of code came from or why it was added.
+
+What surprised me
+ I was mainly surprised to find out, how git blame shows us that who is respinsilble for a line, and that cherry-pick can copy a single commit instead of merging an entire branch.
