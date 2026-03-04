@@ -7,7 +7,7 @@ Firstly, I opened the conflicted file, checked both the versions, and decided to
 What did I learn?
 I learned, a conflict can occur when changes overlap in the same part of the file. I also learned how to read the conflict markers and fix the file by choosing version i want.
 
-TASK [Merge Conflicts & Conflict Resolution #42]
+TASK [Merge Conflicts & Conflict Resolution #40]
 
 What is the difference between staging and committing?
 Staging means choosing a file that contain changes to be included in the next commit. When a file is staged using `git add`, Git marks that version of the file to be saved.
