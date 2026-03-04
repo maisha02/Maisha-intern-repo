@@ -7,6 +7,11 @@ Firstly, I opened the conflicted file, checked both the versions, and decided to
 What did I learn?
 I learned, a conflict can occur when changes overlap in the same part of the file. I also learned how to read the conflict markers and fix the file by choosing version i want.
 
+
+
+
+
+
 TASK [Merge Conflicts & Conflict Resolution #40]
 
 What is the difference between staging and committing?
@@ -18,3 +23,18 @@ Git separates staging and committing so that we can control what changes to be i
 
 When would you stage changes without committing?
 We do this when we want to review the changes before committing, or when we want to group related changes together before creating a commit.
+
+
+
+
+
+Branching & Team Collaboration
+
+Why is pushing directly to main problematic?
+Pushing directly to the main branch can be very risky because changes go straight into the main codebase without a chance to review it. If the code contains bugs or breaks something, it would affect everyone's work in the repository.
+
+How do branches help with reviewing code?
+Branches allow us to work on changes separately from the main branch. The changes can then be reviewed by pull requests before being merged, this ensures mistakes do not happen and improves code quality.
+
+What happens if two people edit the same file on different branches?
+Git would then try to merge the changes automatically. However if both people modify the same part of the file, a merge conflict would occur and someone would have to manually decide which change to keep.
