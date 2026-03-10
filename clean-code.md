@@ -39,3 +39,22 @@ def calculate_total(prices):
     return total
 
 Explaination:- The cleaner code uses clear function and variable names, which makes it easier to understand. It also returns the result instead of printing it, making the function easier to reuse.
+
+----------
+
+# Code Formatting & Style Guides(#48)
+
+## Why code formatting is important
+It makes it easier to read and understand. If the style remain same, it becomes easier to work together and maintain the code.
+
+## Airbnb JavaScript Style Guide
+It is a set of rules for writing JavaScript in a clean and consistent way. It ensures we follow the same structure, naming style, and formatting.
+
+## ESLint and Prettier
+ESLint is a tool that checks the code and tries to find problems like unused variables or missing semicolons. Prettier is a tool that automatically formats the code so that the code looks clean and consistent.
+
+## What issues the linter detected
+The linter found some spacing issues and missing semicolons. These problems usally don't break the code, but they make it harder to read.
+
+## Did formatting make the code easier to read?
+Yes, formatting does make the code easier to read. The spacing and structure became cleaner, which makes the code easier to understand.
