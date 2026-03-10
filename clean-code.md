@@ -88,3 +88,27 @@ def calculate_total(numbers):
 
 ----------
 
+# Writing Small, Focused Functions (#50)
+
+## Why is breaking down functions beneficial?
+It makes smaller functions are easier to read, understand, and test. Each function should do one clear job, which makes the code easier to fix and maintain.
+
+## How did refactoring improve the structure of the code?
+By splitting one large function into smaller parts with clear roles, refactoring improved structure. Making it easier to maintain.
+
+## Before 
+def calculate_total(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    print("Total:", total)
+
+## After
+def get_total(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+def display_total(total):
+    print("Total:", total)
