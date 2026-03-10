@@ -172,3 +172,29 @@ The original code was more complicated than needed. It was using extra variables
 
 ## How did refactoring improve it?
 Refactoring simplified the logic and removed unnecessary steps. The code became shorter, clearer, and easier to understand.
+
+------
+
+# Commenting & Documentation (#53)
+
+## When should you add comments?
+Comments are useful for explaining why something is done, important rules, or complex logic.
+
+## When should you avoid comments and instead improve the code?
+Comments should be avoided when we can alter the code to make it more clear. If the code is easy to understand on its own, extra comments are not needed.
+
+## Example
+def calculate_total(numbers):
+    # loop through numbers
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+## Adding comment
+def calculate_total(numbers):
+    # Add all numbers in the list and return the final total
+    total = 0
+    for number in numbers:
+        total += number
+    return total
