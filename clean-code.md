@@ -112,3 +112,5 @@ def get_total(numbers):
 
 def display_total(total):
     print("Total:", total)
+
+--------
