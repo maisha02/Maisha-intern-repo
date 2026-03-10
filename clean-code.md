@@ -114,3 +114,35 @@ def display_total(total):
     print("Total:", total)
 
 --------
+
+# Avoiding Code Duplication (#51)
+
+## What were the issues with duplicated code?
+It makes programs harder to maintain as the same logic appears in multiple places. If a change is needed, it has to be updated everywhere, which can lead to mistakes.
+
+## How did refactoring improve maintainability?
+By replacing repeated code with a reusable function, refactoring improved maintainability. This makes the code cleaner, easier to update, and easier to understand.
+
+## Before (duplicated logic)
+
+def sum_numbers(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+def average_numbers(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total / len(numbers)
+
+## After (DRY principle)
+def calculate_total(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+def average_numbers(numbers):
+    return calculate_total(numbers) / len(numbers)
