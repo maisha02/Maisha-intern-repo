@@ -146,3 +146,29 @@ def calculate_total(numbers):
 
 def average_numbers(numbers):
     return calculate_total(numbers) / len(numbers)
+
+--------
+
+# Refactoring Code for Simplicity (#52)
+
+## Before
+def calculate_average(numbers):
+    total = 0
+    count = 0
+
+    for number in numbers:
+        total = total + number
+        count = count + 1
+
+    average = total / count
+    return average
+
+## After
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+## What made the original code complex?
+The original code was more complicated than needed. It was using extra variables and steps for a simple calculation, which made it harder to read.
+
+## How did refactoring improve it?
+Refactoring simplified the logic and removed unnecessary steps. The code became shorter, clearer, and easier to understand.
