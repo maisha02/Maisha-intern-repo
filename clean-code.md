@@ -58,3 +58,33 @@ The linter found some spacing issues and missing semicolons. These problems usal
 
 ## Did formatting make the code easier to read?
 Yes, formatting does make the code easier to read. The spacing and structure became cleaner, which makes the code easier to understand.
+
+----------
+
+# Naming Variables & Functions(#49)
+
+## What makes a good variable or function name?
+A good variable clearly shows what the variable is storing or what the function really does.
+
+## What issues can arise from poorly named variables?
+Poor names can create confusion and makes the code harder to read. Can also lead to mistakes as the purpose of the variable is unclear.
+
+## How did refactoring improve code readability?
+By replacing unclear names with clear and meaningful ones, refactoring improved code readability. Making it easier to understand.
+
+# unclear variable 
+def f(x):
+    y = 0
+    for i in x:
+        y += i
+    return y
+
+# refactoring
+def calculate_total(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+----------
+
