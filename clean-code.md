@@ -198,3 +198,23 @@ def calculate_total(numbers):
     for number in numbers:
         total += number
     return total
+
+-------
+# Handling Errors & Edge Cases (#53)
+
+## Before
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+## After
+def calculate_average(numbers):
+    if not numbers:  # guard clause
+        return 0
+
+    return sum(numbers) / len(numbers)
+
+## What was the issue with the original code?
+The original code did not check for invalid input, so it could fail or give wrong results. It also did not handle edge cases like an empty list or a missing value.
+
+## How does handling errors improve reliability?
+Handling errors improves reliability as the program can deal with unexpected input in a safe way. It helps prevent crashes and makes the code more stable.
