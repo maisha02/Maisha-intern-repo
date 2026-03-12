@@ -200,7 +200,7 @@ def calculate_total(numbers):
     return total
 
 -------
-# Handling Errors & Edge Cases (#53)
+# Handling Errors & Edge Cases (#54)
 
 ## Before
 def calculate_average(numbers):
@@ -218,3 +218,22 @@ The original code did not check for invalid input, so it could fail or give wron
 
 ## How does handling errors improve reliability?
 Handling errors improves reliability as the program can deal with unexpected input in a safe way. It helps prevent crashes and makes the code more stable.
+
+----------
+
+# Writing Unit Tests for Clean Code (#55)
+
+## How do unit tests help keep code clean?
+Unit tests help keep code clean by checking that functions work correctly. They make it easier to detect problems early and ensure that changes do not break existing code.
+
+## What issues did you find while testing?
+Testing is helpful and can reveal problems such as incorrect logic or functions not handling inputs properly. It makes the code more reliable. 
+
+## Example
+def calculate_total(numbers):
+    return sum(numbers)
+
+## Unit Test 
+def test_calculate_total():
+    assert calculate_total([1, 2, 3]) == 6
+    assert calculate_total([5, 5]) == 10
