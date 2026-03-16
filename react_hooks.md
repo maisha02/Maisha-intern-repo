@@ -30,3 +30,17 @@ If it is removed, the expensive calculation runs again on every render. This can
 
 ---------
 
+# Preventing Unnecessary Renders with useCallback (#68)
+
+## What problem does useCallback solve?
+It helps prevent unnecessary re-renders by keeping the same function reference between renders. This is useful when passing functions to child components.
+
+## How does useCallback work differently from useMemo?
+It stores a function, while it stores the result of a calculation. Both help avoid unnecessary work, but they are used for different things.
+
+## When would useCallback not be useful?
+It is not useful for simple cases where function references do not affect performance. Using it everywhere can add extra complexity without much benefit.
+
+## ![UseCallbackDemo Screenshot](react-tailwind-app/src/assets/images/UseCallbackDemo.png)
+
+-------
