@@ -11,3 +11,9 @@ If we modify state directly instead of using the setter function from useState, 
 ![Counter Screenshot](react-tailwind-app/src/assets/images/counter_image.png)
 
 ------
+
+# Working with Lists & User Input (#62) 
+One common issue when working with lists in React is forgetting to add a unique key for each list item. Without a key, React cannot efficiently track which items have changed. Another issue is directly mutating state instead of creating a new array when updating the list. React requires state updates to create a new copy so it can detect the change and re-render the component correctly.
+
+## screenshot for issue62
+![list Screenshot](react-tailwind-app/src/assets/images /list_image.png)
