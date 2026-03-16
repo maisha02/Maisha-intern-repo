@@ -5,11 +5,12 @@ import UseEffectDemo from "./components/UseEffectDemo";
 import UseMemoDemo from "./components/UseMemoDemo";
 import UseCallbackDemo from "./components/UseCallbackDemo";
 import AxiosDemo from "./components/AxiosDemo";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <div>
-      <AxiosDemo />
+     <Counter />
     </div>
   );
 }
