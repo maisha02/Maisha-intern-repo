@@ -26,4 +26,4 @@ Client-side routing allows navigation between pages without reloading the entire
 ## Screenshot for issue65 
 ![Pages Screenshot](react-tailwind-app/src/assets/images/Pages_image.png)
 
-
+# 

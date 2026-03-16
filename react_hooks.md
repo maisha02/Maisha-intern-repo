@@ -11,3 +11,22 @@ If dependencies are incorrect or missing, the effect may run too often, leading 
 
 ## Screenshot showing issue66
 ![UseEffect Screenshot](react-tailwind-app/src/assets/images/useEffectDemo.png)
+
+--------
+
+# Optimizing Performance with useMemo (#67)
+
+## How does useMemo improve performance?
+It improves performance by storing the result of an expensive calculation and reusing it on later renders. This avoids unnecessary recomputation.
+
+## When should you avoid using useMemo?
+You should avoid using it for simple calculations because it can add unnecessary complexity. It is most useful only when the calculation is expensive.
+
+## What happens if you remove useMemo from your implementation?
+If it is removed, the expensive calculation runs again on every render. This can make the component less efficient.
+
+## Screenshot for issue67
+![UseMemoDemo Screenshot](react-tailwind-app/src/assets/images/useMemoDemo.png)
+
+---------
+
