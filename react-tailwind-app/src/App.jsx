@@ -1,15 +1,24 @@
-
-import Counter from "./components/Counter";
-import ListForm from "./components/ListForm";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <div>
-      <h1>React State Demo</h1>
+    <Router>
+      <div>
+        <h1>React Router Demo</h1>
 
-      <Counter />
-      <ListForm />
-    </div>
+        <nav>
+          <Link to="/">Home</Link> |{" "}
+          <Link to="/profile">Profile</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

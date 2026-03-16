@@ -16,4 +16,14 @@ If we modify state directly instead of using the setter function from useState, 
 One common issue when working with lists in React is forgetting to add a unique key for each list item. Without a key, React cannot efficiently track which items have changed. Another issue is directly mutating state instead of creating a new array when updating the list. React requires state updates to create a new copy so it can detect the change and re-render the component correctly.
 
 ## screenshot for issue62
-![list Screenshot](react-tailwind-app/src/assets/images /list_image.png)
+![List Screenshot](react-tailwind-app/src/assets/images /list_image.png)
+
+-------
+
+# Working with Lists & User Input (#65) 
+Client-side routing allows navigation between pages without reloading the entire webpage. This makes applications faster and provides a smoother user experience. React Router updates the URL and renders the correct component while keeping the application running in the browser. It also allows developers to organize applications into multiple views while maintaining a single-page application structure.
+
+## Screenshot for issue65 
+![Pages Screenshot](react-tailwind-app/src/assets/images/Pages_image.png)
+
+
