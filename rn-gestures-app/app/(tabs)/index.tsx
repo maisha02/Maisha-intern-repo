@@ -1,16 +1,16 @@
-import { View, Text, useWindowDimensions, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
+
+const items = ['Apple', 'Banana', 'Orange'];
 
 export default function HomeScreen() {
-  const { width } = useWindowDimensions();
-
   return (
     <View style={styles.container}>
-      <Text style={[styles.title, { fontSize: width > 400 ? 28 : 18 }]}>
-        Responsive Styling
-      </Text>
-      <Text style={styles.subtitle}>
-        Screen width: {width}
-      </Text>
+      <Text style={styles.title}>Fruit List</Text>
+      <FlatList
+        data={items}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
+      />
     </View>
   );
 }
@@ -18,15 +18,18 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'black',
   },
   title: {
     color: 'white',
+    fontSize: 24,
     marginBottom: 10,
   },
-  subtitle: {
-    color: 'yellow',
+  item: {
+    color: 'lightgray',
+    fontSize: 18,
+    marginVertical: 4,
   },
 });
