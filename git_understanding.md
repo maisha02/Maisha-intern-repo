@@ -36,35 +36,69 @@ Pushing directly to the main branch can be very risky because changes go straigh
 How do branches help with reviewing code?
 Branches allow us to work on changes separately from the main branch. The changes can then be reviewed by pull requests before being merged, this ensures mistakes do not happen and improves code quality.
 
-What happens if two people edit the same file on different branches?
-Git would then try to merge the changes automatically. However if both people modify the same part of the file, a merge conflict would occur and someone would have to manually decide which change to keep.
+What happens if two people edit the same file on different branches? Git would then try to merge the changes automatically. However if both people modify the same part of the file, a merge conflict would occur and someone would have to manually decide which change to keep.
+
+# Advanced Git Commands & When to Use Them #43
+
+### git checkout main -- <file>
+I tested this by modifying a file (git_understanding.md), then restoring it using this command.
+
+Command used:
+git checkout main -- git_understanding.md
+
+Result:
+The file returned to the version from main and my changes were removed.
+
+Screenshot:
+![Checkout](images/git_checkout.png)
 
 
+### git cherry-pick <commit>
+I created a new branch, made a commit, and then cherry-picked that commit into main.
+
+Command used:
+git cherry-pick <commit-id>
+
+Result:
+The specific commit was added to main without merging the whole branch.
+
+Screenshot:
+![Cherry Pick](images/cherry_pick.png)
 
 
+### git log
+I used git log to view commit history.
 
-
-Advanced Git Commands & When to Use Them #43
-
-git checkout main -- <file>
-This command restores a specific file from the main branch without changing other files. I could potentially use it, if accidentally I changed or broke a file and want to return it to the version in main.
-
-git cherry-pick <commit>
-This command apply one specific commit from another branch to the current branch. I could use it if I only need one fix or change from another branch without merging the whole branch.
-
+Command used:
 git log
-This basically shows the commit history of the repository. It allows me see what changes were made, when they were made, and who made them.
 
-git blame <file>
-This command shows who last modified a line in the file and when. It is specially useful when we are trying to find where a piece of code came from or why it was added.
+Result:
+It showed all commits with messages, authors, and timestamps. I could track changes clearly.
 
-What surprised me
-I was mainly surprised to find out, how git blame shows us that who is respinsilble for a line, and that cherry-pick can copy a single commit instead of merging an entire branch.
-
+Screenshot:
+![Git Log](images/git_log.png)
 
 
+### git blame <file>
+I used git blame on git_understanding.md.
+
+Command used:
+git blame git_understanding.md
+
+Result:
+It showed who last edited each line and when.
+
+Screenshot:
+![Git Blame](images/git_blame.png)
 
 
+### What surprised me
+I was surprised that cherry-pick allows copying only one commit instead of merging everything. Also, git blame clearly shows who changed each line, which is very useful in team projects.
+
+
+
+
+------
 
 Understand git bisect #44
 
