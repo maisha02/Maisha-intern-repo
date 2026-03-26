@@ -7,4 +7,4 @@ I use mac, so i already had mac terminal installed so decided to go with that.
 Nothing major. 
 
 ## Most useful command I learned today
-The most used command from today was `cd`. It allows me to move between folders easily. 
+The most used command from today was `cd`. It allows me to move between folders easily.
