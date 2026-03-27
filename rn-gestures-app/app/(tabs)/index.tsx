@@ -1,35 +1,53 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator, Button } from 'react-native';
+import { useEffect, useState } from 'react';
+import api from '../api';
 
-const items = ['Apple', 'Banana', 'Orange'];
+type Post = {
+  title: string;
+  body: string;
+};
 
 export default function HomeScreen() {
+  const [data, setData] = useState<Post | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const fetchData = async () => {
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await api.get('/posts/1');
+      setData(response.data);
+    } catch (err) {
+      setError('Failed to load data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Fruit List</Text>
-      <FlatList
-        data={items}
-        keyExtractor={(item) => item}
-        renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
-      />
+    <View style={{ flex: 1, justifyContent: 'center', padding: 20, backgroundColor: 'black' }}>
+      {loading && <ActivityIndicator size="large" />}
+  
+      {error !== '' && <Text style={{ color: 'white', marginBottom: 10 }}>{error}</Text>}
+  
+      {data && (
+        <>
+          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white', marginBottom: 10 }}>
+            {data.title}
+          </Text>
+          <Text style={{ color: 'white', marginBottom: 20 }}>
+            {data.body}
+          </Text>
+        </>
+      )}
+  
+      <Button title="Reload" onPress={fetchData} />
     </View>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    color: 'white',
-    fontSize: 24,
-    marginBottom: 10,
-  },
-  item: {
-    color: 'lightgray',
-    fontSize: 18,
-    marginVertical: 4,
-  },
-});
+      }
