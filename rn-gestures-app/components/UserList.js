@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import React, { useEffect, useState } from "react";
+import { View, Text } from "react-native";
 
 export default function UserList() {
-  const [data, setData] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch('https://example.com/users')
-      .then(res => res.json())
-      .then(json => setData(json));
+    fetch("https://example.com/user")
+      .then((res) => res.json())
+      .then((data) => setUser(data.name));
   }, []);
 
   return (
     <View>
-      {data.map((item, index) => (
-        <Text key={index}>{item.name}</Text>
-      ))}
+      <Text>{user ? user : "Loading..."}</Text>
     </View>
   );
 }
