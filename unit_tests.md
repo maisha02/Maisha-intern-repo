@@ -71,3 +71,25 @@ React Testing Library focuses on how users interact with the UI. This makes test
 It was a bit confusing to understand how to simulate clicks and select elements. It took some time to learn how fireEvent works, but it became easier after trying it.
 
 ---------
+
+# Mocking API Calls in Jest (71)
+
+# Task 
+## Research how to mock API calls in Jest using jest.fn() and jest.mock().
+Jest allows mocking API calls using functions like jest.fn() and jest.mock(). This helps simulate API responses without making real network requests. It allows testing how components behave with different data.
+
+## Create Component (API Fetch) and Mock API in Test
+Created a component called "UserList" that fetches user data and displays it.
+Then Mocked the API call and tested if the component shows the correct data.
+And finally run the tet, to check if the test has passed.
+![Mock API Test Screenshot](images/test2.png)
+
+# Reflection 
+## Why is it important to mock API calls in tests?
+Mocking API calls allows testing without real network requests. It makes tests faster and more reliable, and avoids dependency on external services.
+
+## What are some common pitfalls when testing asynchronous code?
+It can be difficult to handle timing correctly. Sometimes tests fail if the data has not loaded yet. Using functions like waitFor helps fix this.
+
+---------
+
