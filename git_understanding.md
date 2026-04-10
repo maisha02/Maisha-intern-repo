@@ -32,13 +32,33 @@ git blame This command shows who last modified a line in the file and when. It i
 
 What surprised me I was mainly surprised to find out, how git blame shows us that who is respinsilble for a line, and that cherry-pick can copy a single commit instead of merging an entire branch.
 
-Understand git bisect #44
+-------
 
-Understand git bisect #44What does git bisect do? we use bisect to find the first commit that introduced the bug, and we do this by testing commits using a binary search.
+# Understand git bisect #44
 
-When would you use it in a real-world debugging situation? In real-world, projects usually conatins multiple commint, we use bisect when we can not identify what caused a certain bug.
+### What does git bisect do?
+git bisect helps find the commit that introduced a bug by using binary search through the commit history.
 
-How does it compare to manually reviewing commits? It uses binanry search, it cuts the search into half as it continues to look for the bug.
+### My test setup
+I created a test file called `bug_test.txt` and made a series of commits:
+- `dabfab5` – good commit 1
+- `7ac7863` – good commit 2
+- `c1e156d` – introduce bug
+- `eee52b5` – later commit
+
+The bug was adding the word `BUG` into `bug_test.txt`.
+
+### Commands I used
+git log --oneline
+git bisect start
+git bisect bad
+git bisect good 7ac7863
+cat bug_test.txt
+git bisect bad
+git bisect reset
+
+
+-----
 
 Writing Meaningful Commit Messages #45
 
