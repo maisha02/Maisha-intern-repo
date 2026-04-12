@@ -6,7 +6,7 @@
     "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "rngesturesapp",
+    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 export default function HomeScreen() {
   const [title, setTitle] = useState("Loading...");
 
+ 
   useEffect(() => {
     console.log('App is running');
 
@@ -17,6 +18,12 @@ export default function HomeScreen() {
         console.log('API error:', err);
       });
   }, []);
+
+
+  const changeLang = async (lang: string) => {
+    await AsyncStorage.setItem('appLanguage', lang);
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <View style={{ padding: 70 }}>
