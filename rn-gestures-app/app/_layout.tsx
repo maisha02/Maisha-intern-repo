@@ -1,9 +1,7 @@
+import '../i18n';
 import { Stack } from 'expo-router';
-
-export const unstable_settings = {
-  initialRouteName: 'index',
-};
+import React from 'react';
 
 export default function RootLayout() {
-  return <Stack />;
+  return <Stack screenOptions={{ headerShown: false }} />;
 }
