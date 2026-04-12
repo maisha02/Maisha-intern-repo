@@ -93,3 +93,43 @@ It can be difficult to handle timing correctly. Sometimes tests fail if the data
 
 ---------
 
+Testing Redux with Jest (72)
+
+# Test 
+
+## Research how to test Redux reducers and actions in Jest
+Redux tests check whether reducers and actions update the state correctly. In Jest, reducers are tested by giving them a starting state and an action, then checking the returned state. Async Redux actions can also be tested to make sure they handle loading and data properly.
+
+
+## Simple Redux Slice
+Created a Redux slice with normal actions and one async action in the file counterSlice.js
+Afterwards wrote test to check if Redux reducer updates the counter state correctly. The screenshot below shows the test passed. 
+![CounterSlice Screenshot](images/counter_slice_1.png)
+
+## Async Redux Action
+For this part we added this bit of code to counterSlice.js
+
+export const incrementAsync = () => {
+  return async (dispatch) => {
+    dispatch(increment());
+  };
+};
+
+And then test with this 
+
+test("should dispatch incrementAsync", async () => {
+  const dispatch = jest.fn();
+
+  await incrementAsync()(dispatch);
+
+  expect(dispatch).toHaveBeenCalledWith(increment());
+});
+
+The async test first failed because the dispatch happened inside setTimeout. I simplified the async action and used await in the test so Jest could detect the dispatch correctly.
+
+# Reflection 
+## What was the most challenging part of testing Redux?
+The most challenging part was understanding how to test the async action. At first, the test failed because the dispatch was not called at the expected time. After simplifying the async function and using await, it became easier to test.
+
+## How do Redux tests differ from React component tests?
+Redux tests focus on how the state changes after actions are dispatched. React component tests focus on what is shown on the screen and how users interact with it.
