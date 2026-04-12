@@ -1,20 +1,22 @@
-import { View, Text, Button } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useEffect } from 'react';
+import { View, Text } from 'react-native';
+import { useEffect, useState } from 'react';
 
 export default function HomeScreen() {
-  const { t, i18n } = useTranslation();
+  const [title, setTitle] = useState("Loading...");
 
  
   useEffect(() => {
-    const loadLanguage = async () => {
-      const savedLanguage = await AsyncStorage.getItem('appLanguage');
-      if (savedLanguage) {
-        i18n.changeLanguage(savedLanguage);
-      }
-    };
-    loadLanguage();
+    console.log('App is running');
+
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('API response:', data);
+        setTitle(data.title);
+      })
+      .catch((err) => {
+        console.log('API error:', err);
+      });
   }, []);
 
 
@@ -24,11 +26,8 @@ export default function HomeScreen() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>{t('welcome')}</Text>
-
-      <Button title="English" onPress={() => changeLang('en')} />
-      <Button title="Spanish" onPress={() => changeLang('es')} />
+    <View style={{ padding: 70 }}>
+      <Text>Debug Test Screen</Text>
     </View>
   );
 }
