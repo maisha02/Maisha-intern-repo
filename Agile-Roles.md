@@ -10,4 +10,4 @@ I work closely with QA to understand testing and with the Product Manager to lea
 As a developer intern, I assist with tasks from the backlog and learn how features are built. I focus on improving my skills while contributing to small parts of the project. Over time, I will take on more responsibility.
 
 ## Identify one role you collaborate with and how to improve teamwork
-I collaborate most with QA to understand testing and quality. I can improve teamwork by asking questions, communicating clearly, and learning from feedback. This helps me grow and support the team better.
+I collaborate most with QA to understand testing and quality. I can improve teamwork by asking questions, communicating clearly, and learning from feedback. This helps me grow and support the team better
